@@ -429,7 +429,6 @@ void parseString_test() {
   jsonparser parser;
   jsmn_init(&parser);
 
-  // Estimate the number of tokens needed
   const int num_tokens = 5;
   vector<jsontoken> tokens(num_tokens);
 
@@ -444,10 +443,17 @@ void parseString_test() {
 }
 
 int main() {
-    parseInput_test();
-    parsePrimitive_test();
-    parseString_test();
-    return 0;
+
+  // parse Input test
+  parseInput_test();
+
+  // parse Primitive values test
+  parsePrimitive_test();
+
+  // parse String values test
+  parseString_test();
+  
+  return 0;
 }
 
 
