@@ -1,2 +1,3 @@
 # jsmnreplica
 Replica for jsmn parser
+This replica uses similar processes to the JSMN parser that was previously published. A prominent feature of the parser is the token feature, which allows for the parser to keep track of parent links, current tokens, and allocate future ones for upcoming characters to be stored in. The parser also parses through 4 types of data, Objects, Arrays, Strings, and Primitive Data which includes numbers, booleans, or null. 
