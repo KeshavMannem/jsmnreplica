@@ -378,7 +378,7 @@ void parseInput_test() {
   // Parse the JSON string
   const int ret = parseInput(&parser, jsonString.c_str(), jsonString.length(), tokens.data(), tokens.size());
   if (ret < 0) {
-      cerr << "Failed to parse JSON: " << ret << endl;
+      cerr << "Failed to parse JSON Input: " << ret << endl;
       exit(1);
   }
 
@@ -411,7 +411,7 @@ void parsePrimitive_test() {
 
   const int ret = primitiveInputParsing(&parser, jsonString.c_str(), jsonString.length(), tokens.data(), tokens.size());
   if (ret < 0) {
-    cerr << "Failed to parse JSON: " << ret << endl;
+    cerr << "Invalid Primitive Type Entry: " << ret << endl;
     exit(1);
   }
 
@@ -435,7 +435,7 @@ void parseString_test() {
   // Parse the JSON string
   const int ret = stringParsing(&parser, jsonString.c_str(), jsonString.length(), tokens.data(), tokens.size());
   if (ret < 0) {
-    cerr << "Failed to parse JSON: " << ret << endl;
+    cerr << "Invalid String Type Entry: " << ret << endl;
     exit(1);
   }
 
