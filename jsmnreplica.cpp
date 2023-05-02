@@ -97,6 +97,8 @@ static int stringParsing(jsonparser *parser, const char *ch,
   
   parser->position++;
   
+  /* loop through the characters in the string until it reaches a null character
+  and the length of the string has been reached*/
   while (parser->position < length && ch[parser->position] != '\0') {
     char c = ch[parser->position];
 
@@ -114,6 +116,7 @@ static int stringParsing(jsonparser *parser, const char *ch,
       return 0;
     }
 
+    /* different cases parser could potentially run into*/
     if (c == '\\' && parser->position + 1 < length) {
       int i;
       parser->position++;
@@ -455,6 +458,5 @@ int main() {
   
   return 0;
 }
-
 
 #endif 
