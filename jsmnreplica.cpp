@@ -452,7 +452,7 @@ void parseString_test() {
 types, sizes, and parent links 
 */
 void inputFileTest() {
-  ifstream inFS("tests/example2.json");
+  ifstream inFS("tests/example1.json");
   string jsonString;
 
   jsonString.assign( (istreambuf_iterator<char>(inFS)), (istreambuf_iterator<char>()));

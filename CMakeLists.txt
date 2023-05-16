@@ -1,0 +1,5 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+
+ADD_EXECUTABLE(jsmn_replica
+	jsmnreplica.cpp
+)
