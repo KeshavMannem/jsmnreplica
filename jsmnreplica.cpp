@@ -3,6 +3,9 @@
 #include <iostream>
 #include <vector>
 #include <cstddef>
+#include <fstream>
+#include <iostream>
+#include <istream>
 using namespace std;
 
 /* types parser can encounter
@@ -445,16 +448,51 @@ void parseString_test() {
   cout << "Parsed successfully!" << endl;
 }
 
+/* testing input from a file system, reads files and parses, printing out tokens, 
+types, sizes, and parent links 
+*/
+void inputFileTest() {
+  ifstream inFS("tests/example2.json");
+  string jsonString;
+
+  jsonString.assign( (istreambuf_iterator<char>(inFS)), (istreambuf_iterator<char>()));
+
+  jsonparser parser;
+  jsmn_init(&parser);
+
+  const int num_tokens = 128;
+  vector<jsontoken> tokens(num_tokens);
+
+  const int ret = parseInput(&parser, jsonString.c_str(), jsonString.length(), tokens.data(), tokens.size());
+  if (ret < 0) {
+      cerr << "Failed to parse JSON Input: " << ret << endl;
+      exit(1);
+  }
+
+  cout << "Parsed successfully!" << endl;
+
+  for (int i = 0; i < ret; ++i) {
+      cout << "Token " << i << ": "
+                << "type=" << tokens[i].type << " "
+                << "start=" << tokens[i].startPos << " "
+                << "end=" << tokens[i].endPos << " "
+                << "size=" << tokens[i].size << " "
+                << "parent=" << tokens[i].parentLink << endl;
+  }
+}
+
 int main() {
 
   // parse Input test
-  parseInput_test();
+  // parseInput_test();
 
-  // parse Primitive values test
-  parsePrimitive_test();
+  // // parse Primitive values test
+  // parsePrimitive_test();
 
-  // parse String values test
-  parseString_test();
+  // // parse String values test
+  // parseString_test();
+
+  inputFileTest();
   
   return 0;
 }
