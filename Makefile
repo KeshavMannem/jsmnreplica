@@ -129,29 +129,29 @@ jsmn_replica/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsmn_replica.dir/build.make CMakeFiles/jsmn_replica.dir/build
 .PHONY : jsmn_replica/fast
 
-jsmnreplica.o: jsmnreplica.cpp.o
-.PHONY : jsmnreplica.o
+test.o: test.cpp.o
+.PHONY : test.o
 
 # target to build an object file
-jsmnreplica.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsmn_replica.dir/build.make CMakeFiles/jsmn_replica.dir/jsmnreplica.cpp.o
-.PHONY : jsmnreplica.cpp.o
+test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsmn_replica.dir/build.make CMakeFiles/jsmn_replica.dir/test.cpp.o
+.PHONY : test.cpp.o
 
-jsmnreplica.i: jsmnreplica.cpp.i
-.PHONY : jsmnreplica.i
+test.i: test.cpp.i
+.PHONY : test.i
 
 # target to preprocess a source file
-jsmnreplica.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsmn_replica.dir/build.make CMakeFiles/jsmn_replica.dir/jsmnreplica.cpp.i
-.PHONY : jsmnreplica.cpp.i
+test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsmn_replica.dir/build.make CMakeFiles/jsmn_replica.dir/test.cpp.i
+.PHONY : test.cpp.i
 
-jsmnreplica.s: jsmnreplica.cpp.s
-.PHONY : jsmnreplica.s
+test.s: test.cpp.s
+.PHONY : test.s
 
 # target to generate assembly for a file
-jsmnreplica.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsmn_replica.dir/build.make CMakeFiles/jsmn_replica.dir/jsmnreplica.cpp.s
-.PHONY : jsmnreplica.cpp.s
+test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jsmn_replica.dir/build.make CMakeFiles/jsmn_replica.dir/test.cpp.s
+.PHONY : test.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... jsmn_replica"
-	@echo "... jsmnreplica.o"
-	@echo "... jsmnreplica.i"
-	@echo "... jsmnreplica.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 
